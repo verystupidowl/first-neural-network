@@ -28,7 +28,3 @@ C2 = [(0, 0), (1, 1)]
 
 print(go(C1[0]), go(C1[1]))
 print(go(C2[0]), go(C2[1]))
-plt.scatter(C1[0][:], C1[1][:], s=10, c='red')
-plt.scatter(C2[0][:], C2[1][:], s=10, c='blue')
-plt.grid(True)
-plt.show()
