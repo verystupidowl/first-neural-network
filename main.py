@@ -2,7 +2,7 @@ import numpy as np
 
 
 def act(x):
-    return 0 if x < 0 else 1
+    return 0 if x < 0.5 else 1
 
 
 def go(house, rock, attr):
@@ -13,21 +13,21 @@ def go(house, rock, attr):
     weight2 = np.array([-1, 1])
 
     sum_hidden = np.dot(weight1, x)
-    print("Значение сумм на нейронах скрытого слоя: " + str(sum_hidden))
+    print("Значения сумм на нейронах скрытого слоя: " + str(sum_hidden))
 
     out_hidden = np.array([act(x) for x in sum_hidden])
-    print("Занчение на выхзодах нейронов скрытого слоя: " + str(out_hidden))
+    print("Значения на выходах нейронов скрытого слоя: " + str(out_hidden))
 
     sum_end = np.dot(weight2, out_hidden)
     y = act(sum_end)
-    print("Выходное число НС: " + str(y))
+    print("Выходное значение НС: " + str(y))
 
     return y
 
 
 house = 1
 rock = 0
-attr = 1
+attr = 0
 
 res = go(house, rock, attr)
 if res == 1:
