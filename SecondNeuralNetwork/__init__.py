@@ -2,20 +2,24 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 N = 5
+b = 3
 
 x1 = np.random.random(N)
-x2 = x1 + [np.random.randint(10) / 10 for i in range(N)]
+x2 = x1 + [np.random.randint(10) / 10 for i in range(N)] + b
 C1 = [x1, x2]
 
 x1 = np.random.random(N)
-x2 = x1 - [np.random.randint(10) / 10 for i in range(N)] - 0.1
+x2 = x1 - [np.random.randint(10) / 10 for i in range(N)] - 0.1 + b
 C2 = [x1, x2]
 
-f = [0, 1]
+f = [0 + b, 1 + b]
 
-w = np.array([-0.3, 0.3])
+w1 = 0.5
+w2 = -w1
+w3 = - b * w2
+w = np.array([-w2, w2, w3])
 for i in range(N):
-    x = np.array([C1[0][i], C1[1][i]])
+    x = np.array([C1[0][i], C1[1][i], 1])
     y = np.dot(w, x)
     if y >= 0:
         print("Class C1")
