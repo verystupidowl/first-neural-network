@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 def act(x):
@@ -23,7 +22,7 @@ def go(C):
     return y
 
 
-C1 = [(0, 1), (0, 1)]
+C1 = [(1, 0), (0, 1)]
 C2 = [(0, 0), (1, 1)]
 
 print(go(C1[0]), go(C1[1]))
