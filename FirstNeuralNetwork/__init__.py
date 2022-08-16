@@ -27,7 +27,7 @@ def go(house, rock, attr):
 
 house = 1
 rock = 0
-attr = 0
+attr = 1
 
 res = go(house, rock, attr)
 if res == 1:
